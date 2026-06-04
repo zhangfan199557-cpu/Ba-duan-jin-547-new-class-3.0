@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastery Hub: Fitness Qigong Ba Duan Jin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+    <header class="top-bar">
+        <h2>Smart Ba Duan Jin</h2>
+        <span id="page-counter">Page 1 / 11</span>
+    </header>
+    <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+    <div class="page active" id="page-1">
+        <div class="card cover-card">
+            <div class="cover-layout">
+                <div class="cover-image-area">
+                    <img src="images/cover.jpg" alt="Ba Duan Jin Cover" class="cover-img">
+                </div>
+                <div class="cover-text-area">
+                    <h1>Fitness Qigong</h1>
+                    <h3 class="chinese-title">《八段锦》Masterclass</h3>
+                    <div class="learning-focus">
+                        <h4>Today's Learning Focus:</h4>
+                        <ul>
+                            <li><b>8 Essential Movements:</b> Mastering traditional forms.</li>
+                            <li><b>Breath Sync:</b> Coordinating rhythm and posture.</li>
+                            <li><b>Body Awareness:</b> Correcting common mistakes.</li>
+                        </ul>
+                    </div>
+                    <p class="intro-text">Experience the ancient wisdom of health preservation. This interactive course will guide you step-by-step through the legendary 800-year-old wellness routine.</p>
+                    <button class="primary-btn start-btn" onclick="goNext()">Start Lesson</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-2">
+        <div class="card">
+            <h1>Preparation Posture (预备式)</h1>
+            <div class="focus-tag">🧘 Foundation & Calming</div> 
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Instructions:</h3>
+                    <ul>
+                        <li>Stand naturally with feet shoulder-width apart.</li>
+                        <li>Arms relaxed at the sides, eyes looking forward.</li>
+                        <li>Calm your mind and regulate your <span class="tooltip">Qi<span class="tooltiptext">Qi (Chi) refers to the vital life force or energy flow in traditional Chinese medicine.</span></span>.</li> 
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/prep.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/prep.jpg" alt="Preparation" class="lesson-img">
+                </div>
+            </div>
+            <div class="quiz-box" style="text-align: center;">
+                <p>Ensure you are in a quiet place and your body is relaxed. Click <b>Next Page</b> to begin.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-3">
+        <div class="card">
+            <h1>Section 1: Two Hands Lift Up the Sky (两手托天理三焦)</h1>
+            <div class="focus-tag">🎯 Target: Triple Burner (Sanjiao)</div> 
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Rotate arms inward and lower slightly.</li>
+                        <li>Lift both palms upward to chest level.</li>
+                        <li>Push palms upward; straighten elbows and tuck chin. This regulates the <span class="tooltip">Triple Burner<span class="tooltiptext">The Triple Burner (Sanjiao) is a concept in Chinese Medicine referring to the passage for fluid and energy distribution in the torso.</span></span>.</li> 
+                        <li>Lower arms to sides; relax the body.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec1.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec1.jpg" alt="Section 1" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Shrugging shoulders or forgetting to look up.</p>
+                <p><b>Correct:</b> Keep shoulders relaxed down while pushing palms up. Tilt head back to see your hands.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Inhale (Push Up)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec1">
+                <h3>Step 1. Cognitive Check: Where should you feel the stretch?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'If you only feel it in your fingers, your arms might not be fully extended.', 1)">Only in my fingers.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'The stretch should go from your palms down through your entire spine.', 1)">From my palms down through my entire spine.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'If your knees hurt, you might be locking them too tightly. Keep them slightly soft.', 1)">Mostly in my knees.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec1" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec1"> Are the arms fully extended upwards?</label>
+                        <label><input type="checkbox" class="check-sec1"> Is the head tilted back, looking at the hands?</label>
+                        <label><input type="checkbox" class="check-sec1"> Is the movement perfectly synced with the breathing ball?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec1" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-4">
+        <div class="card">
+            <h1>Section 2: Drawing the Bow (左右开弓似射雕)</h1>
+            <div class="focus-tag">🎯 Target: Lungs & Heart</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Shift your weight and step into a wider stance.</li>
+                        <li>Cross your hands in front of your chest.</li>
+                        <li>Pull one hand back to the shoulder while pushing the other palm forward, as if drawing a bow.</li>
+                        <li>Keep your shoulders relaxed and sink your <span class="tooltip">Qi<span class="tooltiptext">Qi (Chi) refers to the vital life force. Sinking Qi means keeping your center of gravity low and stable.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec2.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec2.jpg" alt="Section 2" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Leaning your torso forward or raising your shoulders.</p>
+                <p><b>Correct:</b> Keep your torso upright and straight. Open your chest fully while pulling the "bowstring".</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Inhale (Draw Bow)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec2">
+                <h3>Step 1. Cognitive Check: What is the correct posture for your torso in this movement?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Leaning forward disrupts your balance and blocks the energy flow.', 2)">Leaning forward to stretch further.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Spot on! An upright posture ensures a fully open chest and stable foundation.', 2)">Upright and straight, with an open chest.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Leaning backward will put unnecessary strain on your lower back.', 2)">Leaning backward.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec2" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec2"> Is the torso perfectly upright (not leaning forward)?</label>
+                        <label><input type="checkbox" class="check-sec2"> Is the chest fully opened?</label>
+                        <label><input type="checkbox" class="check-sec2"> Is the horse stance wide and stable?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec2" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-5">
+        <div class="card">
+            <h1>Section 3: Single Arm Lift (调理脾胃须单举)</h1>
+            <div class="focus-tag">🎯 Target: Spleen & Stomach</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Extend your knees and stand upright.</li>
+                        <li>Lift one palm upward to the sky while pressing the other palm downward.</li>
+                        <li>Shift your weight smoothly.</li>
+                        <li>This opposing stretch regulates the <span class="tooltip">Spleen and Stomach<span class="tooltiptext">In TCM, the spleen and stomach are the root of digestion and nutrient absorption.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec3.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec3.jpg" alt="Section 3" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Bending your elbows too much or leaning to one side.</p>
+                <p><b>Correct:</b> Feel the opposing forces stretching up and down simultaneously. Keep your spine aligned.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Inhale (Stretch Up & Down)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec3">
+                <h3>Step 1. Cognitive Check: What should your two hands be doing?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'That was Section 1! In this section, the hands do different things.', 3)">Pushing upward together.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'They should be actively stretching, not resting.', 3)">Resting quietly on the waist.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Correct! This creates a vertical stretch that massages the internal organs.', 3)">Pushing in opposite directions (one up, one down).</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec3" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec3"> Are the palms pushing perfectly flat (one up, one down)?</label>
+                        <label><input type="checkbox" class="check-sec3"> Are the knees extended straight?</label>
+                        <label><input type="checkbox" class="check-sec3"> Is the spine vertically aligned?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec3" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-6">
+        <div class="card">
+            <h1>Section 4: Looking Backward (五劳七伤往后瞧)</h1>
+            <div class="focus-tag">🎯 Target: Central Nervous System & Neck</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Stand up straight with feet parallel.</li>
+                        <li>Slowly rotate your arms outward, palms facing diagonally backward.</li>
+                        <li>Turn your head gently to look backward, pausing briefly.</li>
+                        <li>This helps prevent the <span class="tooltip">Five Strains and Seven Injuries<span class="tooltiptext">A traditional Chinese term for various physical and emotional fatigues or internal imbalances caused by overwork or negative emotions.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec4.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec4.jpg" alt="Section 4" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Turning your entire body (shoulders and hips) to look back.</p>
+                <p><b>Correct:</b> Keep your chest facing forward. The twist should primarily happen in your neck and upper spine.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Inhale (Look Back)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec4">
+                <h3>Step 1. Cognitive Check: Which part of your body is the primary focus of the twist?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Keep your hips stable and facing forward.', 4)">The hips and lower back.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Perfect! This movement gently stimulates the cervical spine and central nervous system.', 4)">The neck and upper spine.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Your ankles should be firmly planted on the ground.', 4)">The ankles.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec4" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec4"> Are the shoulders and chest facing straight forward?</label>
+                        <label><input type="checkbox" class="check-sec4"> Are the arms visibly rotated outward?</label>
+                        <label><input type="checkbox" class="check-sec4"> Is the twist isolated mainly to the neck?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec4" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-7">
+        <div class="card">
+            <h1>Section 5: Sway the Head and Shake the Tail (摇头摆尾去心火)</h1>
+            <div class="focus-tag">🎯 Target: Heart & Nervous System</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Sink into a horse stance with hands resting on your thighs.</li>
+                        <li>Lower your torso and twist from side to side.</li>
+                        <li>Swing your head and torso in a circular, natural motion.</li>
+                        <li>This movement effectively calms the <span class="tooltip">Heart Fire<span class="tooltiptext">In TCM, "Heart Fire" refers to excess stress, anxiety, or restlessness. This movement helps release that tension.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec5.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec5.jpg" alt="Section 5" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Moving only your neck while keeping your waist stiff.</p>
+                <p><b>Correct:</b> The swaying motion must originate from your waist and tailbone, traveling smoothly up your spine to your head.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Exhale (Sway Down)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec5">
+                <h3>Step 1. Cognitive Check: Where should the swaying motion originate?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'If you only move your neck, you might strain your cervical spine.', 5)">Only from the neck.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'The shoulders should be relaxed and follow the body, not lead the movement.', 5)">From the shoulders.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Spot on! The movement acts like a whip, starting from the waist and tailbone.', 5)">From the waist and tailbone.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec5" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec5"> Does the swaying originate from the waist/tailbone?</label>
+                        <label><input type="checkbox" class="check-sec5"> Are the shoulders completely relaxed?</label>
+                        <label><input type="checkbox" class="check-sec5"> Is the horse stance deep and stable during the sway?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec5" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-8">
+        <div class="card">
+            <h1>Section 6: Two Hands Hold the Feet (两手攀足固肾腰)</h1>
+            <div class="focus-tag">🎯 Target: Kidneys & Lower Back</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Stand straight with legs together. Raise arms upward.</li>
+                        <li>Keep legs straight, bend forward from the waist.</li>
+                        <li>Slide both palms down your legs toward your feet.</li>
+                        <li>Rise smoothly. This strongly strengthens the lower back and <span class="tooltip">Kidneys<span class="tooltiptext">In Chinese Medicine, the kidneys store vital essence and govern the health of bones and the lower back.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec6.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec6.jpg" alt="Section 6" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Bending your knees excessively or forcing yourself to touch your toes if you lack flexibility.</p>
+                <p><b>Correct:</b> Keep your legs straight but not forcefully locked. Bend from the hips, and only go as far as your hamstrings comfortably allow.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Exhale (Bend Down)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec6">
+                <h3>Step 1. Cognitive Check: What should you do if you cannot touch your toes?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Never force a stretch, as it can cause injury.', 6)">Force myself down until I touch them.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Excellent! Qigong is about gentle stretching, not painful forcing.', 6)">Only go as far as comfortable while keeping legs relatively straight.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Bending the knees defeats the purpose of stretching the hamstrings and lower back.', 6)">Bend my knees deeply to reach the toes.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec6" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec6"> Are the knees straight (but not forcefully locked)?</label>
+                        <label><input type="checkbox" class="check-sec6"> Is the bend originating from the hips?</label>
+                        <label><input type="checkbox" class="check-sec6"> Is the rising motion smooth and controlled?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec6" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-9">
+        <div class="card">
+            <h1>Section 7: Clench Fists and Glare (攒拳怒目增气力)</h1>
+            <div class="focus-tag">🎯 Target: Liver & Muscular Strength</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Sink into a stable horse stance.</li>
+                        <li>Punch one fist forward slowly but with internal tension.</li>
+                        <li>Perform an <span class="tooltip">Angry Gaze<span class="tooltiptext">Glaring widely stimulates the liver meridian, helping to release pent-up frustration and stress.</span></span>.</li>
+                        <li>Keep your supporting arm steady at the waist to boost inner strength.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec7.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec7.jpg" alt="Section 7" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Punching loosely or blinking during the punch.</p>
+                <p><b>Correct:</b> Punch with intention (like moving through water) and maintain a wide, focused stare to stimulate the liver meridian.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Exhale (Punch Forward)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec7">
+                <h3>Step 1. Cognitive Check: Why do we use an "angry gaze" in this movement?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'No, Qigong is for health, not combat.', 7)">To intimidate an opponent.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'It might test your eyes, but that is not the main medical purpose.', 7)">To practice staring without blinking.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Perfect! In TCM, the eyes are connected to the liver, and glaring helps release stagnant energy.', 7)">To stimulate the liver meridian and release inner stress.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec7" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec7"> Is the gaze noticeably "angry" and intensely focused?</label>
+                        <label><input type="checkbox" class="check-sec7"> Is the punch slow but with visible internal tension?</label>
+                        <label><input type="checkbox" class="check-sec7"> Is the resting fist held tight at the waist?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec7" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Next Section ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-10">
+        <div class="card">
+            <h1>Section 8: Heel Lifting (背后七颠百病消)</h1>
+            <div class="focus-tag">🎯 Target: Full Body & Immune System</div>
+            
+            <div class="content-split">
+                <div class="text-area">
+                    <h3>Steps Breakdown:</h3>
+                    <ul>
+                        <li>Stand upright with your feet together and arms relaxed.</li>
+                        <li>Lift both heels upward as high as comfortable, keeping your balance.</li>
+                        <li>Drop both heels lightly to the ground to produce a gentle vibration.</li>
+                        <li>This creates a resonance to <span class="tooltip">Shake off illnesses<span class="tooltiptext">In TCM, this gentle vibration helps clear blockages in the meridians and stimulates the immune system.</span></span>.</li>
+                    </ul>
+                    <div class="audio-box">
+                        <p>🎧 Audio Guide:</p>
+                        <audio controls src="audio/sec8.mp3"></audio>
+                    </div>
+                </div>
+                <div class="image-area">
+                    <img src="images/sec8.jpg" alt="Section 8" class="lesson-img">
+                </div>
+            </div>
+
+            <div class="self-check-box">
+                <h4>⚠️ Posture Self-Check</h4>
+                <p><b>Avoid:</b> Slamming your heels down violently, which can jar your brain or spine.</p>
+                <p><b>Correct:</b> Drop them with a controlled release—firm enough to feel a vibration, but gentle enough to be completely safe.</p>
+            </div>
+
+            <div class="practice-box">
+                <h3>Interactive Practice</h3>
+                <div class="breath-container">
+                    <div class="breath-ball"></div>
+                    <p id="breath-text">Inhale (Lift Heels)</p>
+                </div>
+            </div>
+
+            <div class="quiz-box" id="quiz-sec8">
+                <h3>Step 1. Cognitive Check: What is the correct way to perform the heel drop?</h3>
+                <div class="options">
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'Be careful! Heavy slamming can jar the spine and cause unnecessary discomfort.', 8)">Slamming the heels down with maximum force.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, true, 'Perfect! This controlled vibration is the key to waking up your internal systems.', 8)">Dropping the heels lightly to produce a gentle, controlled vibration.</button>
+                    <button class="opt-btn" onclick="checkAnswer(this, false, 'While good for calves, the goal here is the vibration from the heel drop.', 8)">Keeping the heels lifted permanently.</button>
+                </div>
+                <p class="feedback" style="display:none;"></p>
+            </div>
+
+            <div class="coach-container" id="coach-sec8" style="display: none; margin-top: 20px;">
+                <details class="coach-checklist" open>
+                    <summary>Step 2. Peer Coach Checklist (Unlocked!)</summary>
+                    <div class="checklist-content">
+                        <label><input type="checkbox" class="check-sec8"> Is the heel drop light and safely controlled?</label>
+                        <label><input type="checkbox" class="check-sec8"> Is the body completely balanced during the lift?</label>
+                        <label><input type="checkbox" class="check-sec8"> Are the arms totally relaxed by the sides?</label>
+                    </div>
+                </details>
+            </div>
+
+            <div id="next-container-sec8" style="display: none; text-align: center; margin-top: 25px;">
+                <button class="primary-btn" onclick="goNext()" style="background: #2b7a0b; box-shadow: 0 4px 15px rgba(43, 122, 11, 0.4);">Unlock Final Summary ➡️</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-11">
+        <div class="card" style="border: 2px solid #d49c2a; box-shadow: 0 10px 30px rgba(212, 156, 42, 0.15);">
+            <h1 style="text-align: center; border: none; font-size: 2.2rem; margin-bottom: 5px;">🎉 Congratulations!</h1>
+            <h3 style="text-align: center; color: #d49c2a; margin-bottom: 30px;">You've Completed the Ba Duan Jin Masterclass</h3>
+
+            <div class="content-split" style="align-items: flex-start;">
+                
+                <div class="text-area" style="background: #fdfaf7; padding: 25px; border-radius: 12px; border: 1px solid #f2e6e1;">
+                    <h3 style="color: #8a2522; border-bottom: 2px solid #eaddd5; padding-bottom: 10px; margin-top: 0;">📖 Key Takeaways</h3>
+                    <ul style="margin-top: 15px; font-size: 1.05rem; line-height: 1.8;">
+                        <li><b>Breathe:</b> Use slow, stable breathing to support every movement.</li>
+                        <li><b>Align:</b> Focus on body alignment rather than speed or intensity.</li>
+                        <li><b>Relax:</b> Keep the shoulders relaxed and maintain a smooth weight shift.</li>
+                        <li><b>Progress:</b> Practice each section separately before combining the sequence.</li>
+                    </ul>
+
+                    <div style="margin-top: 25px; padding: 15px; background: #f7ebe6; border-radius: 8px; border-left: 4px solid #8a2522;">
+                        <h4 style="margin: 0 0 8px 0; color: #8a2522;">🌿 Wisdom of Qigong</h4>
+                        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6; color: #5d4037;">
+                            <em>"Where the mind goes, the Qi follows."</em> (意到气到)<br>
+                            Ba Duan Jin is a moving meditation. Consistency is your greatest teacher. Dedicate just 15 minutes a day, and your body will thank you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-area">
+                    <div class="practice-box" style="background: #fffcf0; border: 2px dashed #d49c2a; text-align: center; margin-top: 0; padding: 30px;">
+                        <h3 style="color: #8a2522; margin-top: 0; font-size: 1.5rem;">🗣️ Class Reflection Wall</h3>
+                        <p style="color: #5d4037; margin-bottom: 25px; font-size: 1.05rem;">
+                            Learning happens together! Click the button below to join our class Padlet. <br><br>
+                            <b>Task:</b> Share which movement helped you relax the most today, and read your classmates' experiences to build our community.
+                        </p>
+                        <a href="https://padlet.com/" target="_blank" style="text-decoration: none;">
+                            <button class="primary-btn" style="background: #d49c2a; font-size: 1.2rem; padding: 15px 30px; box-shadow: 0 4px 15px rgba(212, 156, 42, 0.4);">
+                                📝 Share on Padlet
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; color: #5d4037; font-size: 0.9rem; margin-top: 30px;">
+                <em>Images and instructional content adapted from original Ba Duan Jin teaching materials.<br>Used with permission for educational purposes.</em>
+            </p>
+        </div>
+    </div>
+
+    <div class="bottom-nav" id="navigation-controls">
+        <button id="btn-back" class="nav-btn" onclick="goBack()">Back</button>
+        <button id="btn-next" class="nav-btn primary-btn" onclick="goNext()">Next</button>
+    </div>
+
+</div> 
+<script src="script.js"></script>
+</body>
+</html>
